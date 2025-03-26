@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Currency Detector</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e2f;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container */
+        .container {
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            background: #282a36;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        /* Form Box */
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background: #2c2f3b;
+            color: white;
+        }
+
+        /* Button */
+        button {
+            padding: 12px;
+            width: 85%;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        /* Result */
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fake Currency Detector</h2>
+        <form action="/predict" method="post" class="form-box">
+            <label>Diagonal:</label>
+            <input type="number" name="diagonal" required step="0.01">
+
+            <label>Height Left:</label>
+            <input type="number" name="height_left" required step="0.01">
+
+            <label>Height Right:</label>
+            <input type="number" name="height_right" required step="0.01">
+
+            <label>Margin Low:</label>
+            <input type="number" name="margin_low" required step="0.01">
+
+            <label>Margin Up:</label>
+            <input type="number" name="margin_up" required step="0.01">
+
+            <label>Length:</label>
+            <input type="number" name="length" required step="0.01">
+
+            <button type="submit">Check Currency</button>
+        </form>
+        <div class="result">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    </div>
+</body>
+</html>
