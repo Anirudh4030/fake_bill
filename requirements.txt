@@ -1,0 +1,6 @@
+numpy==2.2.4
+opencv-python==4.11.0.86
+flask
+joblib
+scikit-learn
+pandas
