@@ -1,6 +1,4 @@
+gunicorn==23.0.0
 numpy==2.2.4
 opencv-python==4.11.0.86
-flask
-joblib
-scikit-learn
-pandas
+packaging==24.2
